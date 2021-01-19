@@ -7,8 +7,7 @@ import com.nigiri.pokeapp.Utils.DatabaseConnection;
 import com.nigiri.pokeapp.Utils.types;
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
-//import me.sargunvohra.lib.pokekotlin.client.PokeApi;
-//import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
+
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -188,7 +187,7 @@ public class TeamBuilder {
             case ("heal"):
                 return 3;
             case ("damage+ailment"):
-                return 0;
+                return 4;
             case ("swagger"):
                 return 5;
             case ("damage+lower"):

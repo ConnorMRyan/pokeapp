@@ -20,7 +20,6 @@ public class Team {
     ArrayList<Monster> teamList = new ArrayList<>();
     public Monster activeMonster;
     ArrayList<Item> itemList = new ArrayList<>();
-
     public Team(String trainerName) {
         this.trainerName = trainerName;
     }
