@@ -1,7 +1,7 @@
 package com.nigiri.pokeapp.ActionStuff;
 
-import com.nigiri.pokeapp.BattleStuff.Team;
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.Models.Team;
+import com.nigiri.pokeapp.Models.Monster;
 
 import java.util.ArrayList;
 import java.util.Collections;

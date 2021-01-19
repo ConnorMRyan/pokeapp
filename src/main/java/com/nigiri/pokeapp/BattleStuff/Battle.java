@@ -1,10 +1,12 @@
 package com.nigiri.pokeapp.BattleStuff;
 
+
+
 import com.nigiri.pokeapp.ActionStuff.BattleAction;
 import com.nigiri.pokeapp.ActionStuff.MoveBase;
 import com.nigiri.pokeapp.ActionStuff.SwitchMonster;
-import com.nigiri.pokeapp.MonsterStuff.Monster;
-
+import com.nigiri.pokeapp.Models.Team;
+import com.nigiri.pokeapp.Models.Monster;
 import java.util.Scanner;
 
 public class Battle {
@@ -28,12 +30,12 @@ public class Battle {
       switchActive();
       BattleAction playerTwo = battleTurn();
       switchActive();
-      displayHP(activeTeam.activeMonster);
-      displayHP(inactiveTeam.activeMonster);
+      displayHP(activeTeam.getActiveMonster());
+      displayHP(inactiveTeam.getActiveMonster());
       if (playerOne.getPriority() >= playerTwo.getPriority()) {
-        playerOne.execute(activeTeam.activeMonster, inactiveTeam.activeMonster);
+        playerOne.execute(activeTeam.getActiveMonster(), inactiveTeam.getActiveMonster());
         switchActive();
-        playerTwo.execute(activeTeam.activeMonster, inactiveTeam.activeMonster);
+        playerTwo.execute(activeTeam.getActiveMonster(), inactiveTeam.getActiveMonster());
         switchActive();
       }
 

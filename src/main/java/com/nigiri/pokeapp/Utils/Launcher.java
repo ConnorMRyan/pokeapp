@@ -1,7 +1,7 @@
 package com.nigiri.pokeapp.Utils;
 
 import com.nigiri.pokeapp.BattleStuff.Battle;
-import com.nigiri.pokeapp.BattleStuff.Team;
+import com.nigiri.pokeapp.Models.Team;
 import com.nigiri.pokeapp.TeamStuff.TeamBuilder;
 import com.nigiri.pokeapp.TeamStuff.TeamParser;
 

@@ -1,6 +1,11 @@
-package com.nigiri.pokeapp.BattleStuff;
+package com.nigiri.pokeapp.Models;
 
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.ActionStuff.Item;
+import com.nigiri.pokeapp.Models.Monster;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 
@@ -9,26 +14,15 @@ import java.util.ArrayList;
  * The active monster is whatever monster is currently 'out'.
  */
 
+@Data
 public class Team {
-    String trainerName;
+    public String trainerName;
     ArrayList<Monster> teamList = new ArrayList<>();
-    Monster activeMonster;
+    public Monster activeMonster;
+    ArrayList<Item> itemList = new ArrayList<>();
 
     public Team(String trainerName) {
         this.trainerName = trainerName;
-    }
-
-    @Override
-    public String toString() {
-        return "PokeMav.com.nigiri.pokeapp.BattleStuff.Team{"
-                + "trainerName='"
-                + trainerName
-                + '\''
-                + ", teamList="
-                + teamList
-                + ", activeMonster="
-                + activeMonster
-                + '}';
     }
 
     public void addMonster(Monster monster) {
@@ -39,15 +33,19 @@ public class Team {
         }
     }
 
-    public ArrayList<Monster> getTeamList() {
-        return teamList;
+    public void addItem(Item item){
+        this.itemList.add(item);
+    }
+
+    public void useItem(Item item){
+        itemList.remove(item);
     }
 
     void removeMonster(int ID) {
         teamList.remove(ID);
     }
 
-    void setActiveMonster() {
+    public void setActiveMonster() {
         for (Monster monster : teamList) {
             if (!monster.fainted) {
                 activeMonster = monster;
@@ -55,11 +53,11 @@ public class Team {
         }
     }
 
-    Monster getMonster(int id) {
+    public Monster getMonster(int id) {
         return teamList.get(id);
     }
 
-    boolean canContinue() {
+    public boolean canContinue() {
         boolean canContinue = false;
         for (Monster monster : teamList) {
             canContinue = canContinue || !monster.fainted;
@@ -67,7 +65,8 @@ public class Team {
         return canContinue;
     }
 
-    int numPokemon() {
+    public int numPokemon() {
         return teamList.size();
     }
+
 }

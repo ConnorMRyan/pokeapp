@@ -5,6 +5,8 @@ import com.nigiri.pokeapp.ActionStuff.MoveBase;
 import com.nigiri.pokeapp.ActionStuff.StatusBoostMove;
 import com.nigiri.pokeapp.Utils.DatabaseConnection;
 import com.nigiri.pokeapp.Utils.types;
+import me.sargunvohra.lib.pokekotlin.client.PokeApi;
+import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
 //import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 //import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
 
@@ -26,7 +28,7 @@ public class TeamBuilder {
 
     public void writeTeam() throws IOException {
         String nick = getUsername();
-        FileWriter fileWriter = new FileWriter("src/main/resources/com.nigiri.pokeapp.Teams/" +
+        FileWriter fileWriter = new FileWriter("src/main/resources/teams/" +
                 "" + nick + ".txt");
         fileWriter.write(nick + "\n");
         int numPoke = numPokemon();

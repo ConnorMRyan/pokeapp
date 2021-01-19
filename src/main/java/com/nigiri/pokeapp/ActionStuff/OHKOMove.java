@@ -1,6 +1,6 @@
 package com.nigiri.pokeapp.ActionStuff;
 
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.Models.Monster;
 
 
 public class OHKOMove extends MoveBase{

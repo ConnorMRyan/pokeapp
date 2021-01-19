@@ -1,6 +1,6 @@
 package com.nigiri.pokeapp.ActionStuff;
 
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.Models.Monster;
 import com.nigiri.pokeapp.Utils.types;
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
@@ -158,7 +158,7 @@ public class BattleMove extends MoveBase {
     return (int) Math.round(((((((2 * user.getLEVEL()) / 5.) + 2)
             * this.getPower()
             * (user.getSPC() / target.getSPC())) / 50 + 2)
-            * types.TYPE_EFFECTIVNESS[type][target.getType1()] * types.TYPE_EFFECTIVNESS[type][target.getType2()]));
+            * types.TYPE_EFFECTIVNESS[type][target.getTYPE_TWO()] * types.TYPE_EFFECTIVNESS[type][target.getTYPE_TWO()]));
   }
 
   /**
@@ -173,13 +173,13 @@ public class BattleMove extends MoveBase {
     Random random = new Random();
     int val = random.nextInt(38);
     double STAB = 1;
-    if (user.getType1() == type || user.getType2() == type) {
+    if (user.getTYPE_ONE() == type || user.getTYPE_TWO() == type) {
       STAB = 1.5;
     }
     return ((217 + val) / 255.)
             * STAB
-            * types.TYPE_EFFECTIVNESS[type][defender.getType1()]
-            * types.TYPE_EFFECTIVNESS[type][defender.getType2()];
+            * types.TYPE_EFFECTIVNESS[type][defender.getTYPE_ONE()]
+            * types.TYPE_EFFECTIVNESS[type][defender.getTYPE_TWO()];
   }
 
   private boolean isAHit() {
@@ -265,7 +265,7 @@ public class BattleMove extends MoveBase {
   }
 
   static String superEffective(int typeOne, Monster def) {
-    double effectiveness = types.TYPE_EFFECTIVNESS[typeOne][def.getType1()] * types.TYPE_EFFECTIVNESS[typeOne][def.getType2()];
+    double effectiveness = types.TYPE_EFFECTIVNESS[typeOne][def.getTYPE_ONE()] * types.TYPE_EFFECTIVNESS[typeOne][def.getTYPE_TWO()];
     if (effectiveness == 0) {
       return "ineffective";
     } else if (effectiveness == .5) {

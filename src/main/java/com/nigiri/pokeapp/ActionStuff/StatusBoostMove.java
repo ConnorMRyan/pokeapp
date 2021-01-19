@@ -1,6 +1,6 @@
 package com.nigiri.pokeapp.ActionStuff;
 
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.Models.Monster;
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
 import me.sargunvohra.lib.pokekotlin.model.Move;

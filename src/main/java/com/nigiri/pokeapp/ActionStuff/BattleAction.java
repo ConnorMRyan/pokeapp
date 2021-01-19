@@ -1,6 +1,6 @@
 package com.nigiri.pokeapp.ActionStuff;
 
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.Models.Monster;
 
 /**
  * The highest level base class for battle actions(Moves, Items, Switching.) All must have the ability to be executed and a priority.

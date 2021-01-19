@@ -1,6 +1,6 @@
 package com.nigiri.pokeapp.Utils;
 
-import com.nigiri.pokeapp.MonsterStuff.Monster;
+import com.nigiri.pokeapp.Models.Monster;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

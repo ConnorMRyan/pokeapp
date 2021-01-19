@@ -1,16 +1,12 @@
 package com.nigiri.pokeapp.ActionStuff;
-import com.nigiri.pokeapp.MonsterStuff.*;
+import com.nigiri.pokeapp.Models.Monster;
 
 
-public class Item extends BattleAction {
-
-    @Override
-    public void execute(Monster user, Monster defender) {
-    System.out.println("blah");
-    }
+public abstract class Item extends BattleAction {
 
     @Override
-    public int getPriority() {
-        return 0;
-    }
+    public abstract void execute(Monster user, Monster defender);
+
+    @Override
+    public abstract int getPriority();
 }
